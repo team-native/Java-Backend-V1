@@ -1,7 +1,7 @@
 # Java Backend V1
 
 Java와 Spring Boot 기반의 백엔드 시작 템플릿입니다.
-인증, 보안 설정, 헬스 체크, 예외 응답, 테스트 기본 구조를 포함합니다.
+인증, 보안 설정, 헬스 체크, 예외 응답, HTTP 로깅, 테스트 기본 구조를 포함합니다.
 
 ## GitHub 템플릿으로 사용하기
 
@@ -38,7 +38,8 @@ src/main/java/com/teamnative/backend
 │   └── sample
 └── global
     ├── config
-    └── exception
+    ├── exception
+    └── logging
 ```
 
 ## 실행
@@ -66,6 +67,16 @@ Windows PowerShell:
 ```powershell
 .\gradlew.bat test
 ```
+
+## 로깅
+
+기본 HTTP 요청/응답 로거가 포함되어 있습니다.
+
+- 서버 시작과 종료 이벤트를 기록합니다.
+- 요청과 응답에 `X-Trace-Id`를 부여해 같은 요청 흐름을 추적할 수 있습니다.
+- HTTP method, path, query, status, duration, client IP, 일부 header, body를 기록합니다.
+- 요청/응답 body는 최대 2KB까지만 기록합니다.
+- `authorization`, `password`, `token`, `secret`, `cookie` 등 민감한 값은 마스킹합니다.
 
 ## 확인용 API
 
