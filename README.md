@@ -1,6 +1,6 @@
-# Backend-V1
+# Java Backend V1
 
-Kotlin과 Spring Boot 3 기반의 백엔드 시작 템플릿입니다.
+Java와 Spring Boot 기반의 백엔드 시작 템플릿입니다.
 인증, 보안 설정, 헬스 체크, 예외 응답, 테스트 기본 구조를 포함합니다.
 
 ## GitHub 템플릿으로 사용하기
@@ -11,26 +11,25 @@ Kotlin과 Spring Boot 3 기반의 백엔드 시작 템플릿입니다.
 
 | 파일 | 변경할 내용 |
 | --- | --- |
-| `settings.gradle.kts` | `rootProject.name` |
-| `build.gradle.kts` | `group`, `version` |
+| `settings.gradle` | `rootProject.name` |
+| `build.gradle` | `group`, `version` |
 | `src/main/resources/application.yml` | `spring.application.name`, `server.port` |
-| `src/main/kotlin/...` | 기본 패키지명 |
-| `src/test/kotlin/...` | 테스트 패키지명 |
+| `src/main/java/...` | 기본 패키지명 |
+| `src/test/java/...` | 테스트 패키지명 |
 
 ## 기술 스택
 
-- Kotlin 1.9
-- Spring Boot 3.3
-- Spring Security
-- Gradle Kotlin DSL
-- JUnit 5
 - Java 21
+- Spring Boot 4.1
+- Spring Security
+- Gradle Groovy DSL
+- JUnit 5
 
 ## 프로젝트 구조
 
 ```text
-src/main/kotlin/com/teamnative/backend
-├── Application.kt
+src/main/java/com/teamnative/backend
+├── Application.java
 ├── domain
 │   ├── auth
 │   │   ├── controller
@@ -71,6 +70,7 @@ Windows PowerShell:
 ## 확인용 API
 
 - `GET /health`
+- `GET /`
 - `GET /api/v1/public/ping`
 - `GET /api/v1/private/ping`
 - `POST /api/v1/auth/login`
